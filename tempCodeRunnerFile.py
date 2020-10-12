@@ -1,0 +1,1 @@
+r = random.random(); g = random.random(); b = random.random();
