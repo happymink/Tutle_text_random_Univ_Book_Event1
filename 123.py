@@ -10,17 +10,17 @@ from tkinter.simpledialog import *
 
 inStr = ''
 
-swidth, sheight = 1500, 700
+swidth, sheight = 1400, 700
 tX, tY, txtSize = [0] * 3
-# screen = turtle.Screen()
-# screen.bgpic("background.jpg")
-# screen.update()
+## 배경 이미지 설정
+screen = turtle.Screen()
+screen.bgpic("sky2.gif")
 
  
 
 ## 메인 함수 부분 ##
 
-turtle.title('거북이 글자쓰기')
+turtle.title('인간 관계론,데일 카네기')
 
 turtle.shape('turtle')
 
@@ -30,22 +30,20 @@ turtle.screensize(swidth, sheight)
 
 turtle.penup()
 
-
-
 inStr = askstring('문자열 입력', "거북이 쓸 문자열을 입력")
-tX = -550
-tY = 200
-txtSize = 50
+tX = -600
+tY = 220
+
 
 for ch in inStr :
 
     
-    r = random.random(); g = random.random(); b = random.random();
-    if ch == '잘':
-        txtSize = 50
-    else:
-        txtSize = 30
     
+    if ch == '잘':
+        txtSize = 25
+    else:
+        txtSize = 15
+  
 
  
 
@@ -53,14 +51,15 @@ for ch in inStr :
   
  
 
-    turtle.pencolor((0,0,0))
+    turtle.pencolor('white')
 
     turtle.write(ch, font=('1훈새마을운동 Regular', txtSize, 'bold'))
     tX += 50
-
+    if ch == ' ':
+        txtSize = 7
     if ch == '.' :
-        tX = -550
-        tY -= 55
+        tX = -600
+        tY -= 40
 
-turtle.goto(-550, 300)
+turtle.goto(0, 0)
 turtle.done()
